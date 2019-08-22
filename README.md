@@ -4,12 +4,12 @@
 
 ### Install
 
-####npm
+#### npm
 ```
 npm install planck-renderer --save
 ```
 
-####yarn
+#### yarn
 ```
 yarn add planck-renderer
 ```
