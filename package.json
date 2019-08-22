@@ -1,9 +1,9 @@
 {
     "name": "planck-renderer",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Small rendering library for plank-js",
     "author": "Stas Kardash real.peha@gmail.com",
-    "main": "lib/renderer.js",
+    "main": "lib/renderer.min.js",
     "scripts": {
       "start": "npx serve"
     },
@@ -20,7 +20,8 @@
       "node": ">=6.2.1"
     },
     "files": [
-      "lib/renderer.js"
+      "lib/renderer.js",
+      "lib/renderer.min.js"
     ],
     "keywords": [
       "planck-js",
