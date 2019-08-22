@@ -1,0 +1,31 @@
+{
+    "name": "planck-renderer",
+    "version": "1.0.0",
+    "description": "Small rendering library for plank-js",
+    "author": "Stas Kardash real.peha@gmail.com",
+    "main": "lib/renderer.js",
+    "scripts": {
+      "start": "npx serve"
+    },
+    "license": "ISC",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/RealPeha/planck-renderer"
+    },
+    "bugs": {
+      "url": "https://github.com/RealPeha/planck-renderer/issues"
+    },
+    "homepage": "https://github.com/RealPeha/planck-renderer#readme",
+    "engines": {
+      "node": ">=6.2.1"
+    },
+    "files": [
+      "lib/renderer.js"
+    ],
+    "keywords": [
+      "planck-js",
+      "physics",
+      "renderer",
+      "canvas"
+    ]
+  }
