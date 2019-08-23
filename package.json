@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "Small rendering library for plank-js",
   "author": "Stas Kardash real.peha@gmail.com",
-  "main": "lib/renderer.min.js",
+  "main": "dist/renderer.min.js",
   "scripts": {
     "start": "gulp watch",
     "build": "gulp build",
@@ -22,14 +22,16 @@
     "node": ">=6.2.1"
   },
   "files": [
-    "lib/renderer.js",
-    "lib/renderer.min.js"
+    "lib/",
+    "dist/"
   ],
   "keywords": [
     "planck-js",
     "physics",
     "renderer",
-    "canvas"
+    "canvas",
+    "html5",
+    "2d"
   ],
   "devDependencies": {
     "browser-sync": "^2.26.7",
