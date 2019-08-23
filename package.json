@@ -1,32 +1,41 @@
 {
-    "name": "planck-renderer",
-    "version": "1.0.1",
-    "description": "Small rendering library for plank-js",
-    "author": "Stas Kardash real.peha@gmail.com",
-    "main": "lib/renderer.min.js",
-    "scripts": {
-      "start": "npx serve"
-    },
-    "license": "ISC",
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/RealPeha/planck-renderer"
-    },
-    "bugs": {
-      "url": "https://github.com/RealPeha/planck-renderer/issues"
-    },
-    "homepage": "https://github.com/RealPeha/planck-renderer#readme",
-    "engines": {
-      "node": ">=6.2.1"
-    },
-    "files": [
-      "lib/renderer.js",
-      "lib/renderer.min.js"
-    ],
-    "keywords": [
-      "planck-js",
-      "physics",
-      "renderer",
-      "canvas"
-    ]
+  "name": "planck-renderer",
+  "version": "1.0.1",
+  "description": "Small rendering library for plank-js",
+  "author": "Stas Kardash real.peha@gmail.com",
+  "main": "lib/renderer.min.js",
+  "scripts": {
+    "start": "gulp watch",
+    "build": "gulp build",
+    "dev": "gulp"
+  },
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RealPeha/planck-renderer"
+  },
+  "bugs": {
+    "url": "https://github.com/RealPeha/planck-renderer/issues"
+  },
+  "homepage": "https://github.com/RealPeha/planck-renderer#readme",
+  "engines": {
+    "node": ">=6.2.1"
+  },
+  "files": [
+    "lib/renderer.js",
+    "lib/renderer.min.js"
+  ],
+  "keywords": [
+    "planck-js",
+    "physics",
+    "renderer",
+    "canvas"
+  ],
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-uglify-es": "^1.0.4"
   }
+}

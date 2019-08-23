@@ -4,7 +4,7 @@ Original: https://github.com/shakiba/planck.js/blob/master/example/Revolute.js
 
 const { World, Vec2, Box, Edge, Circle, RevoluteJoint, Polygon, WheelJoint } = planck
 
-import Viewer from "../lib/renderer.min.js";
+import Viewer from "../dist/renderer.min.js";
 
 const canvas = document.querySelector('#game')
 
