@@ -1,6 +1,6 @@
 {
   "name": "planck-renderer",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Small rendering library for plank-js",
   "author": "Stas Kardash real.peha@gmail.com",
   "main": "dist/renderer.min.js",
@@ -23,7 +23,8 @@
   },
   "files": [
     "lib/",
-    "dist/"
+    "dist/",
+    "example/"
   ],
   "keywords": [
     "planck-js",
@@ -37,7 +38,10 @@
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
+    "gulp-bro": "^1.0.3",
+    "gulp-browserify": "^0.5.1",
     "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
     "gulp-rename": "^1.4.0",
     "gulp-uglify-es": "^1.0.4"
   }

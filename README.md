@@ -1,6 +1,6 @@
 # Small rendering library for [plank-js](https://github.com/shakiba/planck.js "plank-js")
 
-Это нельзя назвать отдельной библиотекой для рендеринга, но она является немного переписанным стандарным рендером, который идет вместе с planck-js - [testbed](https://github.com/shakiba/planck.js/blob/master/testbed/index.js "testbed"), который в свою очередь основан на[ stage-js](https://github.com/shakiba/stage.js " stage-js")
+A small library designed to render objects from plank-js, is based on the standard [testbed](https://github.com/shakiba/planck.js/blob/master/testbed/index.js "testbed") renderer, which in turn is based on [stage-js](https://github.com/shakiba/stage.js " stage-js")
 
 ### Install
 
@@ -20,10 +20,8 @@ yarn add planck-renderer
 import { World, Edge, Vec2, Circle } from 'plank-js'
 import Viewer from "planck-renderer";
 
-const canvas = document.querySelector('#test')
 const world = new World(Vec2(0, -10));
 const viewer = new Viewer({
-	canvas,
 	world,
 	// and another settings
 })
@@ -36,4 +34,44 @@ world.createDynamicBody(Vec2(0.0, 10.0)).createFixture(Circle(5.0), 10.0);
 viewer.startUpdate(); // start rendering world
 ```
 
-Более развернутый пример можно найти в папке [example](https://github.com/RealPeha/planck-renderer/tree/master/example "example")
+A more detailed example can be found in the folder [example](https://github.com/RealPeha/planck-renderer/tree/master/example "example")
+
+
+### Camera
+
+Usage example
+
+```javascript
+import Viewer from "planck-renderer";
+
+const viewer = new Viewer()
+
+const ball = world.createDynamicBody(Vec2(5.0, 30.0)).createFixture(Circle(3.0));
+
+let camera
+viewer.ready = () => {
+	camera = viewer.camera
+}
+
+viewer.step = () => {
+	const target = ball.getPosition()
+	camera.follow(target, 5)
+}
+```
+
+or
+
+```javascript
+import Viewer, { Camera } from "planck-renderer";
+
+const viewer = new Viewer()
+
+const ball = world.createDynamicBody(Vec2(5.0, 30.0)).createFixture(Circle(3.0));
+
+const camera = new Camera(viewer)
+
+viewer.step = () => {
+	const target = ball.getPosition()
+	camera.follow(target, 5)
+}
+```

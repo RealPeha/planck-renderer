@@ -2,11 +2,12 @@ const gulp = require('gulp')
 const server = require('browser-sync').create()
 const clean = require('gulp-clean')
 const rename = require('gulp-rename')
+const concat = require('gulp-concat')
 const uglify = require('gulp-uglify-es').default
 
 const path = {
     dist: './dist/',
-    input: './lib/renderer.js',
+    input: './lib/*.js',
     example: './example/**/*.*',
     public: './public/**/*.*',
 }
@@ -18,6 +19,7 @@ const cleanDist = () => {
 
 const minify = () => {
     return gulp.src(path.input)
+        .pipe(concat('renderer.js'))
         .pipe(uglify())
         .pipe(rename({
             suffix: '.min',

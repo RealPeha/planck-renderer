@@ -2,14 +2,9 @@
 Original: https://github.com/shakiba/planck.js/blob/master/example/Revolute.js
 */
 
-const { World, Vec2, Box, Edge, Circle, RevoluteJoint, Polygon, WheelJoint } = planck
+const { World, Vec2, Box, Edge, Circle, RevoluteJoint, Polygon } = planck
 
-import Viewer from "../dist/renderer.min.js";
-
-const canvas = document.querySelector('#game')
-
-canvas.width = window.innerWidth
-canvas.height = window.innerHeight
+import Viewer, { Camera } from '../dist/renderer.min.js';
 
 const world = new World(Vec2(0, -10));
 
@@ -19,11 +14,14 @@ const KEY = {
 }
 
 const viewer = new Viewer({
-  canvas,
   world,
   speed: 1.3,
   hz: 50,
+  width: 40,
+  height: 40,
 })
+
+let camera = new Camera(viewer);
 
 const setup = () => {
   const ground = world.createBody();
@@ -55,7 +53,6 @@ const setup = () => {
   const ball = world.createDynamicBody(Vec2(5.0, 30.0));
   ball.createFixture(Circle(3.0), {
     density: 5.0,
-    // filterMaskBits: 1,
   });
 
   const platform = world.createBody({
@@ -85,6 +82,16 @@ const setup = () => {
     } else if (keys[KEY.X]) {
       joint.enableMotor(!joint.isMotorEnabled());
     }
+  }
+
+  /* viewer.ready = () => {
+    camera = viewer.camera;
+    return true;
+  } */
+
+  viewer.step = () => {
+    const target = ball.getPosition();
+    camera.follow(target)
   }
 }
 
