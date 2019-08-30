@@ -51,6 +51,7 @@ const ball = world.createDynamicBody(Vec2(5.0, 30.0)).createFixture(Circle(3.0))
 let camera
 viewer.ready = () => {
 	camera = viewer.camera
+	return true // viewer.ready must return true
 }
 
 viewer.step = () => {
