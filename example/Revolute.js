@@ -4,24 +4,33 @@ Original: https://github.com/shakiba/planck.js/blob/master/example/Revolute.js
 
 const { World, Vec2, Box, Edge, Circle, RevoluteJoint, Polygon } = planck
 
-import Viewer, { Camera } from '../dist/renderer.min.js';
+import Renderer from '../dist/renderer.min.js';
+
+const canvas = document.querySelector('#test')
+canvas.width = window.innerWidth
+canvas.height = window.innerHeight
+
+const ctx = canvas.getContext('2d')
+
+ctx.translate(canvas.width / 2, canvas.height / 2)
+ctx.scale(-1, 1)
+ctx.rotate(Math.PI)
+
 
 const world = new World(Vec2(0, -10));
 
-const KEY = {
-  Z: [90, 32],
-  X: 88,
-}
-
-const viewer = new Viewer({
-  world,
-  speed: 1.3,
-  hz: 50,
-  width: 40,
-  height: 40,
+const renderer = new Renderer(world, ctx, {
+  scale: 10,
 })
 
-let camera = new Camera(viewer);
+renderer.clear = (canvas, ctx) => {
+  ctx.clearRect(
+    -canvas.width / 2,
+    -canvas.height / 2,
+    canvas.width,
+    canvas.height
+  );
+}
 
 const setup = () => {
   const ground = world.createBody();
@@ -75,26 +84,8 @@ const setup = () => {
     Vec2(17.52, 36.69),
     Vec2(17.19, 36.36)
   ]), 1);
-
-  viewer.keydown = (keys) => {
-    if (keys[KEY.Z]) {
-      joint.enableLimit(!joint.isLimitEnabled());
-    } else if (keys[KEY.X]) {
-      joint.enableMotor(!joint.isMotorEnabled());
-    }
-  }
-
-  /* viewer.ready = () => {
-    camera = viewer.camera;
-    return true;
-  } */
-
-  viewer.step = () => {
-    const target = ball.getPosition();
-    camera.follow(target)
-  }
 }
 
 setup()
 
-viewer.startUpdate();
+renderer.startUpdate();

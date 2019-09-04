@@ -34,10 +34,7 @@ const reload = (done) => {
 
 const serve = (done) => {
     server.init({
-        server: {
-            baseDir: "./",
-            index: "./public/index.html"
-        }
+        server: './',
     })
     done()
 }

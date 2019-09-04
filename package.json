@@ -44,5 +44,8 @@
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^1.4.0",
     "gulp-uglify-es": "^1.0.4"
+  },
+  "dependencies": {
+    "canvas-viewport": "^0.0.3"
   }
 }
