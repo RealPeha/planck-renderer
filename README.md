@@ -1,7 +1,9 @@
 # Small rendering library for [plank-js](https://github.com/shakiba/planck.js "plank-js")
 
 A small library for rendering objects from the planck-js library
+
 It is written without using third-party libraries and renders
+
 If you want to use planck-js together with stage-js libraries, then in the [stage-js branch](https://github.com/RealPeha/planck-renderer/tree/stage-js "stage-js branch") you can find another version
 
 ### Install
