@@ -1,6 +1,6 @@
 {
   "name": "planck-renderer",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Small rendering library for plank-js",
   "author": "Stas Kardash real.peha@gmail.com",
   "main": "dist/renderer.min.js",
@@ -27,6 +27,7 @@
     "example/"
   ],
   "keywords": [
+    "planck",
     "planck-js",
     "planckjs",
     "physics",
