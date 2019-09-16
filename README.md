@@ -46,6 +46,7 @@ runner.start(() = {
 ```
 
 A more detailed example can be found in the folder [example](https://github.com/RealPeha/planck-renderer/tree/master/example "example")
+or look at this example [online](https://codesandbox.io/s/hungry-colden-70rji "online")
 
 ## Renderer
 
