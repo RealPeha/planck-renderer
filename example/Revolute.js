@@ -4,7 +4,7 @@ Original: https://github.com/shakiba/planck.js/blob/master/example/Revolute.js
 
 const { World, Vec2, Box, Edge, Circle, RevoluteJoint, Polygon } = planck
 
-import Renderer from '../dist/renderer.min.js';
+import Renderer, { Runner } from '../dist/renderer.min.js';
 
 const canvas = document.querySelector('#test')
 canvas.width = window.innerWidth
@@ -20,6 +20,11 @@ const scale = 10
 
 const renderer = new Renderer(world, ctx, {
   scale: scale,
+})
+
+const runner = new Runner(world, {
+  fps: 60,
+  speed: 1,
 })
 
 renderer.clear = (canvas, ctx) => {
@@ -94,8 +99,8 @@ const setup = img => {
     Vec2(17.19, -36.36)
   ]), 1);
 
-  renderer.draw = (ctx, fps) => {
-    ctx.fillText(`FPS: ${fps}`, 0, 0)
+  renderer.draw = (ctx) => {
+    ctx.fillText(`FPS: ${runner.fps}`, 0, 0)
   }
 }
 
@@ -105,5 +110,14 @@ img.onload = () => {
   setup(img)
 }
 
+runner.start(() => {
+  renderer.renderWorld()
+})
 
-renderer.startUpdate();
+setTimeout(() => {
+  runner.stop()
+}, 1500)
+
+setTimeout(() => {
+  runner.start()
+}, 3000)

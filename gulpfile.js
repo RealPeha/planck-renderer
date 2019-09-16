@@ -22,6 +22,7 @@ const minify = () => {
         .pipe(concat('renderer.js'))
         .pipe(uglify())
         .pipe(rename({
+            basename: 'renderer',
             suffix: '.min',
         }))
         .pipe(gulp.dest(path.dist));
