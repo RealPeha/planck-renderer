@@ -1,4 +1,4 @@
-# Small rendering library for [plank-js](https://github.com/shakiba/planck.js "plank-js")
+# Small rendering library for [shakiba/plank-js](https://github.com/shakiba/planck.js "shakiba/plank-js")
 
 A small library for rendering objects from the planck-js library
 It is written without using third-party libraries and renders
@@ -54,7 +54,7 @@ or look at this example [online](https://codesandbox.io/s/hungry-colden-70rji "o
 ```javascript
 import Renderer, { CanvasRenderer, SVGRenderer } from 'planck-renderer';
 ```
-Where CanvasRenderer uses canvas for rendering, SVGRenderer - svg, default import Renderer automatically selects canvas
+Where CanvasRenderer uses canvas for rendering, SVGRenderer - svg, default import Renderer automatically selects canvas or svg
 
 ### Renderer API
 
@@ -77,7 +77,7 @@ const renderer = new Renderer(world, ctx, options)
 ### renderer.draw
 
 If you need to draw something on the canvas in addition to the physical objects of the engine, then you can do this in the renderer method.
-This method returns context
+This method returns canvas context
 
 ```javascript
 renderer.draw = (ctx) => {
@@ -104,7 +104,7 @@ ball.render = {
 
 ### custom render function
 
-the first argument this function always returns context. For the circle, the next two arguments will be position (object - x, y) and size (number). For a polygon, the next two arguments will be position (object - x, y) and size (object - width, height)
+The first argument this function always returns context. For the circle, the next two arguments will be position (object - x, y) and size (number). For a polygon, the next two arguments will be position (object - x, y) and size (object - width, height)
 
 Let's draw a ball texture instead of a circle
 
