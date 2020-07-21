@@ -40,7 +40,7 @@ world.createBody().createFixture(Edge(Vec2(-40.0, 0.0), Vec2(40.0, 0.0)));
 world.createDynamicBody(Vec2(0.0, 4.5)).createFixture(Circle(0.5), 10.0);
 world.createDynamicBody(Vec2(0.0, 10.0)).createFixture(Circle(5.0), 10.0);
 
-runner.start(() = {
+runner.start(() => {
 	renderer.renderWorld()
 }) // start rendering world
 ```
@@ -60,7 +60,7 @@ Where CanvasRenderer uses canvas for rendering, SVGRenderer - svg, default impor
 
 ------------
 
-### constructor 
+### constructor
 ```javascript
 	// default options
 const options = {
@@ -148,7 +148,7 @@ import { Runner } from 'planck-renderer';
 
 ------------
 
-### constructor 
+### constructor
 ```javascript
 	// default options
 const options = {
